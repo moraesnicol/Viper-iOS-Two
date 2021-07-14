@@ -7,7 +7,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LiveNewsViewController: UIViewController {
+
+
+    var presenter: LiveNewsViewToPresenterProtocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +21,18 @@ class ViewController: UIViewController {
 
 }
 
-
+extension LiveNewsViewController: LiveNewsPresenterToViewProtocol {
+    
+    func showNews() {
+        
+    }
+    
+    func showError() {
+       
+    }
+    
+    
+}
 // View: Class that has all the code to show the app interface to the user and get their responses. Upon receiving a response View alerts the Presenter.
 
 // Presenter: Nucleus of a module. It gets user response from the View and works accordingly. The only class to communicate with all the other components. Calls the router for wire-framing, Interactor to fetch data (network calls or local data calls), view to update the UI.
